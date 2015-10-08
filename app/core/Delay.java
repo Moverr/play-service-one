@@ -16,6 +16,4 @@ public class Delay {
             throw new RuntimeException("Baaaad times comes for you application. Dark side of the force is stronger !");
         }
     }
-
-
 }
