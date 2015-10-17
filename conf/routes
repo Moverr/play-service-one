@@ -3,5 +3,10 @@
 # ~~~~
 
 # Home page
-GET        /calculation/big        @controllers.Application.doBigCalculation()
-GET        /calculation/small      @controllers.Application.doSmallCalculation()
+GET        /calculation/big          @controllers.Application.doBigCalculation()
+GET        /calculation/small        @controllers.Application.doSmallCalculation()
+
+
+
+
+GET        /showRunProperties        @controllers.Application.showRunProperties()

@@ -11,12 +11,12 @@ public class CalculationSystem {
 
 
     public int calculationBig(boolean exception) {
-        Delay.mockCrashAndDelay(exception, 5000);
+        Delay.mockCrashAndDelay(exception, PlayPropertiesHelper.getBigDelay());
         return new Random().nextInt(1234364334);
     }
 
     public int calculationSmall(boolean exception) {
-        Delay.mockCrashAndDelay(exception, 2);
+        Delay.mockCrashAndDelay(exception, PlayPropertiesHelper.getSmallDelay());
         return new Random().nextInt(1234);
     }
 
