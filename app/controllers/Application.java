@@ -2,7 +2,6 @@ package controllers;
 
 import com.google.inject.Inject;
 import core.CalculationSystem;
-import core.PlayPropertiesHelper;
 import play.libs.F;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -25,8 +24,7 @@ public class Application extends Controller {
 
 
     public F.Promise<Result> doSmallCalculation() {
-        return F.Promise.promise(() -> calculationSystem.calculationSmall(
-                PlayPropertiesHelper.getSmallException())) // non-blocking with F.Promise.promise
+        return F.Promise.promise(() -> calculationSystem.calculationSmall()) // non-blocking with F.Promise.promise
                 .map(x -> {
                     Map<String, Integer> data = new HashMap<>();
                     data.put("result", x);
@@ -39,8 +37,7 @@ public class Application extends Controller {
 
 
     public F.Promise<Result> doBigCalculation() {
-        return F.Promise.promise(() -> calculationSystem.calculationBig(
-                PlayPropertiesHelper.getBigException())) // non-blocking with F.Promise.promise
+        return F.Promise.promise(() -> calculationSystem.calculationBig()) // non-blocking with F.Promise.promise
                  .map(x -> {
                      Map<String, Integer> data = new HashMap<>();
                      data.put("result", x);
