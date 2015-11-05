@@ -9,7 +9,6 @@ import static core.PlayPropertiesHelper.*;
  */
 public class CalculationSystem {
 
-
     public int calculationBig() {
         Delay.mockCrashAndDelay(getBigException(), getBigDelay());
         return new Random().nextInt(1234364334);

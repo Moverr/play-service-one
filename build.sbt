@@ -2,7 +2,8 @@ name := """ServiceOne"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val root = (project in file("."))
+  .enablePlugins(PlayJava) // in play 2.2 == .settings(playJavaSettings: _*)
 
 scalaVersion := "2.11.6"
 

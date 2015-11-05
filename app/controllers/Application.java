@@ -38,15 +38,16 @@ public class Application extends Controller {
 
     public F.Promise<Result> doBigCalculation() {
         return F.Promise.promise(() -> calculationSystem.calculationBig()) // non-blocking with F.Promise.promise
-                 .map(x -> {
-                     Map<String, Integer> data = new HashMap<>();
-                     data.put("result", x);
-                     return data;
-                 })
+                .map(x -> {
+                    Map<String, Integer> data = new HashMap<>();
+                    data.put("result", x);
+                    return data;
+                })
                 .map(Json::toJson)
                 .map(jsonResponse -> (Result) ok(jsonResponse))
                 .recover(t -> badRequest(t.getMessage() + "\n"));
     }
+
 
 
 
