@@ -9,7 +9,6 @@ public class Delay {
         try {Thread.sleep(ms);} catch (InterruptedException e) {}
     }
 
-
     public static void mockCrashAndDelay(boolean exception, long delay) {
         Delay.get(delay);
         if (exception) {

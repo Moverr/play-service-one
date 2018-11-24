@@ -1,6 +1,5 @@
 package core;
 
-
 import java.util.Random;
 import static core.PlayPropertiesHelper.*;
 
@@ -18,6 +17,4 @@ public class CalculationSystem {
         Delay.mockCrashAndDelay(getSmallException(), getSmallDelay());
         return new Random().nextInt(1234);
     }
-
-
 }

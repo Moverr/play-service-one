@@ -18,10 +18,8 @@ import static core.PlayPropertiesHelper.*;
  */
 public class Application extends Controller {
 
-
     @Inject
     private CalculationSystem calculationSystem;
-
 
     public F.Promise<Result> doSmallCalculation() {
         return F.Promise.promise(() -> calculationSystem.calculationSmall()) // non-blocking with F.Promise.promise
@@ -35,7 +33,6 @@ public class Application extends Controller {
                 .recover(t -> badRequest(t.getMessage() + "\n"));
     }
 
-
     public F.Promise<Result> doBigCalculation() {
         return F.Promise.promise(() -> calculationSystem.calculationBig()) // non-blocking with F.Promise.promise
                 .map(x -> {
@@ -48,10 +45,6 @@ public class Application extends Controller {
                 .recover(t -> badRequest(t.getMessage() + "\n"));
     }
 
-
-    
-
-
     public Result showRunProperties() {
         return ok(
                 "{\n" +
@@ -62,6 +55,4 @@ public class Application extends Controller {
                         "}"
         );
     }
-
-
 }

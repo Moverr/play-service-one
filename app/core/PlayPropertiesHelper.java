@@ -23,5 +23,4 @@ public final class PlayPropertiesHelper {
     public static final Long getSmallDelay() {
         return Play.application().configuration().getLong("small.delay");
     }
-
 }

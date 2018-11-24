@@ -9,7 +9,9 @@ scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   cache,
-  javaWs
+  javaWs,
+  "junit" % "junit" % "4.12" % Test,
+  "com.novocode" % "junit-interface" % "0.11" % Test exclude("junit", "junit-dep")
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
